@@ -1,11 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
+import NombreFoto from './components/NombreFoto';
+import CampoConArray from './components/CampoConArray';
+import Flechita from './components/Flechita';
 
 function App() {
+let numero = 0
+let next = ()=>{
+  numero++
+}
   return (
         <div className='card black'>
-          <h2 className='titulo white flex j-center a-center'>IGNACIO BORRAZ</h2>
-          <img src='./img/sujeto1.png' alt='sujeto1' className='photo' />
+          <NombreFoto/>
           <p className='gray flex j-center a-center'>ocultar info</p>
           <div className='edad-fecha'>
             <p className='datos white r25 edad'>Edad: 32 años</p>
@@ -14,15 +20,11 @@ function App() {
           <div className='datos white flex a-center'>
             <p>Mail: ignacioborraz@hotmail.com</p>
           </div>
-          <div className='datos white flex a-center'>
-            <p>Comidas: lasaña y hamburguesa</p>
-          </div>
-          <div className='datos white flex a-center'>
-            <p>Hobbies: leer manga y bailar</p>
-          </div>
+          <CampoConArray titulo='' datos=''/>
+          <CampoConArray titulo='' datos=''/>
           <div className='flex j-center a-center'>
-            <div className='gray flecha r25 flex j-center a-center'> anterior </div>
-            <div className='gray flecha l25 flex j-center a-center'> siguiente </div>
+            <Flechita verbo={'anterior'} estilo="r25"/>
+            <Flechita verbo={'siguiente'} estilo="l25"/>
           </div>
         </div>
       )
